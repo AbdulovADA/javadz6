@@ -30,6 +30,7 @@ public class StatsServiceTest {
         assertEquals(expected, actual);
 
     }
+
     @Test
     public void findMax() {
         StatsService service = new StatsService();
@@ -53,6 +54,7 @@ public class StatsServiceTest {
 
         assertEquals(expected, actual);
     }
+
     @Test
     public void findBelowAverage() {
         StatsService service = new StatsService();
@@ -64,6 +66,7 @@ public class StatsServiceTest {
 
         assertEquals(expected, actual);
     }
+
     @Test
     public void findUnderAverage() {
         StatsService service = new StatsService();

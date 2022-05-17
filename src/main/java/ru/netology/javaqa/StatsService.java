@@ -3,22 +3,20 @@ package ru.netology.javaqa;
 public class StatsService {
 
     public long calculateSum(long[] sales) {
-        int sum = 0;
+        long sum = 0;
         for (long sale : sales) {
             sum += sale;
         }
         return sum;
     }
 
-    public int calculateAverage(long[] sales) {
-        int average = 0;
-        if (sales.length > 0) {
-            int sum = 0;
-            for (int i = 0; i < sales.length; i++) {
-                sum += sales[i];
-            }
+    public long calculateAverage(long[] sales) {
+        long average = 0;
+        long sum = calculateSum(sales);
+        {
             average = sum / sales.length;
         }
+
         return average;
     }
 
@@ -45,19 +43,11 @@ public class StatsService {
     }
 
     public long findBelowAverage(long[] sales) {
-        long averageb = 0;
         long belowAverage = 0;
-        if (sales.length > 0) {
-            int sum = 0;
+        long average = calculateAverage(sales);
             for (int i = 0; i < sales.length; i++) {
-                sum += sales[i];
-            }
-            averageb = sum / sales.length;
-            belowAverage = 0;
-            for (int i = 0; i < sales.length; i++) {
-                if (sales[i] < averageb) {
-                    belowAverage ++;
-                }
+                if (sales[i] < average) {
+                    belowAverage++;
             }
         }
 
@@ -65,19 +55,11 @@ public class StatsService {
     }
 
     public long findUnderAverage(long[] sales) {
-        long averagec = 0;
         long underAverage = 0;
-        if (sales.length > 0) {
-            int sum = 0;
+        long average = calculateAverage(sales);
             for (int i = 0; i < sales.length; i++) {
-                sum += sales[i];
-            }
-            averagec = sum / sales.length;
-            underAverage = 0;
-            for (int i = 0; i < sales.length; i++) {
-                if (sales[i] > averagec) {
-                    underAverage ++;
-                }
+                if (sales[i] > average) {
+                    underAverage++;
             }
         }
 
